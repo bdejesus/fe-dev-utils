@@ -9,7 +9,7 @@
 
 
 var enableCanary = function(canaryId) {
-  document.cookie = "_canary="+canaryId+";";
+  document.cookie = "_canary="+canaryId+"$path=/;";
   if (document.cookie.indexOf(canaryId) >= 0) {
     location.reload();
   } else {
@@ -23,7 +23,7 @@ var disableCanary = function(){
 };
 
 var initCanaryUi = function() {
-  var btnToggle = "<button id='btn-toggle-canary-ui' class='btn-alt btn-xs'>Show/Hide</button>"
+  var btnToggle = "<button id='btn-toggle-canary-ui' class='btn-alt btn-xs'>Canary</button>"
   var inputCanaryId = "<input id='canaryId' type='text' required='true' class='input-xs' />"
   var btnEnable = "<button id='btn-enable-canary' style='margin:0 5px;' class='button btn-primary btn-xs'>Enable</button>";
   var btnDisable = "<button id='btn-disable-canary' style='margin:0;' class='button btn-default btn-xs'>Disable</button>";
