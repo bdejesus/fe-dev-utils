@@ -9,7 +9,8 @@
 
 
 var enableCanary = function(canaryId) {
-  document.cookie = "_canary="+canaryId+"$path=/;";
+  document.cookie = "_canary="+canaryId+"$;path=/;";
+
   if (document.cookie.indexOf(canaryId) >= 0) {
     location.reload();
   } else {
